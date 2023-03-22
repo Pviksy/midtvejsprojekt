@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" stylesheets="@../../../style/resono.css" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+
+   <Tab text="Klientliste">
+      <fx:include source="Tabs/Klientliste.fxml" />
+   </Tab>
+
+   <Tab text="Hold">
+      <fx:include source="Tabs/Hold.fxml" />
+   </Tab>
+
+   <Tab text="Tags">
+      <fx:include source="Tabs/Tags.fxml" />
+   </Tab>
+
+   <Tab text="Opret ny klient">
+      <fx:include source="Tabs/OpretNyKlient.fxml" />
+   </Tab>
+
+   <Tab text="Materiale">
+      <fx:include source="Tabs/Materiale.fxml" />
+   </Tab>
+
+   <Tab text="Opgaver">
+      <fx:include source="Tabs/OpretOpgave.fxml" />
+   </Tab>
+
+</TabPane>

@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Mikkel -->
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane styleClass="lysegra-color" stylesheets="@../../../style/resono.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.opgavedb_1.presentation.admin.AdminController">
+   <center>
+      <HBox alignment="CENTER" blendMode="SRC_ATOP" maxHeight="-Infinity" maxWidth="-Infinity" spacing="100.0" styleClass="sort-color" stylesheets="@../../../style/resono.css">
+         <children>
+            <VBox>
+               <children>
+                  <HBox alignment="CENTER">
+                     <children>
+                        <Label text="Vækstresonanter">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <TableView fx:id="instructorTable">
+                     <columns>
+                        <TableColumn fx:id="email" prefWidth="175.0" text="E-Mail" />
+                        <TableColumn fx:id="phonenumber" prefWidth="100.0" text="Telefonnummer" />
+                        <TableColumn fx:id="firstname" prefWidth="100.0" text="Fornavn" />
+                        <TableColumn fx:id="lastname" prefWidth="100.0" text="Efternavn" />
+                        <TableColumn fx:id="address" prefWidth="250.0" text="Adresse" />
+                     </columns>
+                  </TableView>
+                  <HBox alignment="CENTER" spacing="7.0">
+                     <children>
+                        <Button minWidth="124.0" mnemonicParsing="false" onAction="#updateSelectedInstructor" text="Rediger oplysninger" />
+                        <Button minWidth="124.0" mnemonicParsing="false" onAction="#deleteSelectedInstructor" text="Slet vækstresonant" />
+                        <Button minWidth="124.0" mnemonicParsing="false" onAction="#startCreatingNewInstructor" text="Opret vækstresonant" />
+                     </children>
+                     <padding>
+                        <Insets top="14.0" />
+                     </padding>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER">
+               <children>
+                  <Label fx:id="selectedInstructorName" text="-">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <VBox layoutX="60.0" layoutY="121.0">
+                     <children>
+                        <Label text="Fornavn">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                           <padding>
+                              <Insets left="7.0" />
+                           </padding>
+                        </Label>
+                        <HBox spacing="7.0">
+                           <children>
+                              <TextField fx:id="firstnameInput" minWidth="250.0" prefWidth="250.0" />
+                              <Button fx:id="updateFirstnameButton" minWidth="80.0" mnemonicParsing="false" onAction="#updateFirstname" text="Opdater" />
+                           </children>
+                           <padding>
+                              <Insets bottom="14.0" />
+                           </padding>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <VBox>
+                     <children>
+                        <Label text="Efternavn">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                           <padding>
+                              <Insets left="7.0" />
+                           </padding>
+                        </Label>
+                        <HBox spacing="7.0">
+                           <children>
+                              <TextField fx:id="lastnameInput" minWidth="250.0" prefWidth="250.0" />
+                              <Button fx:id="updateLastnameButton" minWidth="80.0" mnemonicParsing="false" onAction="#updateLastname" text="Opdater" />
+                           </children>
+                           <padding>
+                              <Insets bottom="14.0" />
+                           </padding>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <VBox>
+                     <children>
+                        <Label text="E-Mail">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                           <padding>
+                              <Insets left="7.0" />
+                           </padding>
+                        </Label>
+                        <HBox spacing="7.0">
+                           <children>
+                              <TextField fx:id="emailInput" minWidth="250.0" prefWidth="250.0" />
+                              <Button fx:id="updateEmailButton" minWidth="80.0" mnemonicParsing="false" onAction="#updateEmail" text="Opdater" />
+                           </children>
+                           <padding>
+                              <Insets bottom="14.0" />
+                           </padding>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <VBox layoutX="60.0" layoutY="227.0">
+                     <children>
+                        <Label text="Telefonnummer">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                           <padding>
+                              <Insets left="7.0" />
+                           </padding>
+                        </Label>
+                        <HBox spacing="7.0">
+                           <children>
+                              <TextField fx:id="phonenumberInput" minWidth="250.0" prefWidth="250.0" />
+                              <Button fx:id="updatePhonenumberButton" minWidth="80.0" mnemonicParsing="false" onAction="#updatePhonenumber" text="Opdater" />
+                           </children>
+                           <padding>
+                              <Insets bottom="14.0" />
+                           </padding>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <VBox layoutX="60.0" layoutY="263.0">
+                     <children>
+                        <Label text="Adresse">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                           <padding>
+                              <Insets left="7.0" />
+                           </padding>
+                        </Label>
+                        <HBox spacing="7.0">
+                           <children>
+                              <TextField fx:id="addressInput" minWidth="250.0" prefWidth="250.0" />
+                              <Button fx:id="updateAddressButton" minWidth="80.0" mnemonicParsing="false" onAction="#updateAddress" text="Opdater" />
+                           </children>
+                           <padding>
+                              <Insets bottom="14.0" />
+                           </padding>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" spacing="14.0">
+                     <children>
+                        <Button fx:id="createNewInstructorButton" minWidth="100.0" mnemonicParsing="false" onAction="#createNewInstructor" text="Opret ny" />
+                        <Line endX="115.0" startX="-115.0">
+                           <stroke>
+                              <LinearGradient endX="1.0" endY="1.0">
+                                 <stops>
+                                    <Stop>
+                                       <color>
+                                          <Color red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" />
+                                       </color>
+                                    </Stop>
+                                    <Stop offset="0.48993288590604017">
+                                       <color>
+                                          <Color red="0.5411764979362488" green="0.658823549747467" blue="0.6823529601097107" />
+                                       </color>
+                                    </Stop>
+                                    <Stop offset="1.0">
+                                       <color>
+                                          <Color red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" />
+                                       </color>
+                                    </Stop>
+                                 </stops>
+                              </LinearGradient>
+                           </stroke>
+                        </Line>
+                        <Button minWidth="100.0" mnemonicParsing="false" onAction="#logOut" text="Log ud" />
+                     </children>
+                  </VBox>
+               </children>
+               <effect>
+                  <DropShadow height="120.0" radius="59.5" width="120.0">
+                     <color>
+                        <Color opacity="0.4000000059604645" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </VBox>
+         </children>
+         <effect>
+            <DropShadow>
+               <color>
+                  <Color opacity="0.5" />
+               </color>
+            </DropShadow>
+         </effect>
+         <padding>
+            <Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />
+         </padding>
+      </HBox>
+   </center>
+   <top>
+      <Pane styleClass="lysegra-color" stylesheets="@../../../style/resono.css" BorderPane.alignment="CENTER" />
+   </top>
+   <left>
+      <Pane styleClass="lysegra-color" stylesheets="@../../../style/resono.css" BorderPane.alignment="CENTER" />
+   </left>
+   <right>
+      <Pane styleClass="lysegra-color" stylesheets="@../../../style/resono.css" BorderPane.alignment="CENTER" />
+   </right>
+   <bottom>
+      <Pane styleClass="lysegra-color" stylesheets="@../../../style/resono.css" BorderPane.alignment="CENTER" />
+   </bottom>
+</BorderPane>

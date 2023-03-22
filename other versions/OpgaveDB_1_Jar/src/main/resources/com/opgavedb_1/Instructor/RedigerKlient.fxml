@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Mikkel -->
+
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+
+<TabPane style="-fx-background-color: #616161;" stylesheets="@../../../style/resono.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <tabs>
+      <Tab text="Personlige oplysninger">
+         <fx:include source="RedigerKlientInfo.fxml" />
+      </Tab>
+      <Tab text="Rediger note">
+         <fx:include source="RedigerKlientNote.fxml" />
+      </Tab>
+   </tabs>
+</TabPane>

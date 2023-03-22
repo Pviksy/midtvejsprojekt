@@ -1,0 +1,26 @@
+    @FXML
+    void saveFile(ActionEvent event) {
+        DirectoryChooser dc = new DirectoryChooser();
+
+        File selectedDirectory = dc.showDialog(null);
+
+
+        if (selectedDirectory == null) {
+            //No Directory selected
+        } else {
+            System.out.println(selectedDirectory.getAbsolutePath());
+
+            //gem path som herunder
+            File path = new File(selectedDirectory.getAbsolutePath() + "filename" + ".docx");
+
+            /*
+            lav fileoutputstream til path og inkluder navnet, som sandsynligvis
+            bliver navnet på opgaven, og hvis det kun bliver .docx filer så
+            er det let at tilføje som illustreret herover
+
+            FileOutputStream os = new FileOutputStream(path);
+            os.write(db.getFile());
+            os.close();
+             */
+        }
+    }

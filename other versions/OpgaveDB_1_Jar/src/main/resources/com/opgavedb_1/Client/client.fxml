@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Mikkel -->
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.web.WebView?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" stylesheets="@../../../style/resono.css" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.opgavedb_1.presentation.client.ClientController">
+   <Tab text="Mine opgaver">
+      <content>
+         <BorderPane prefHeight="200.0" prefWidth="200.0">
+            <center>
+               <VBox styleClass="lysegra-color" stylesheets="@../../../style/resono.css" BorderPane.alignment="CENTER">
+                  <effect>
+                     <DropShadow>
+                        <color>
+                           <Color opacity="0.5" />
+                        </color>
+                     </DropShadow>
+                  </effect>
+                  <children>
+                     <StackPane maxHeight="900.0" maxWidth="1600.0" styleClass="sort-color" stylesheets="@../../../style/resono.css">
+                        <VBox.margin>
+                           <Insets />
+                        </VBox.margin>
+                        <children>
+                           <WebView fx:id="videoPlayer" minHeight="240.0" minWidth="426.0" prefHeight="1080.0" prefWidth="1920.0">
+                              <StackPane.margin>
+                                 <Insets bottom="7.0" left="7.0" right="7.0" top="7.0" />
+                              </StackPane.margin></WebView>
+                        </children>
+                     </StackPane>
+                  </children>
+                  <padding>
+                     <Insets bottom="7.0" left="7.0" right="7.0" top="7.0" />
+                  </padding>
+               </VBox>
+            </center>
+            <right>
+               <VBox spacing="50.0" BorderPane.alignment="CENTER">
+                  <children>
+                     <VBox prefWidth="250.0" spacing="14.0">
+                        <children>
+                           <VBox alignment="TOP_CENTER">
+                              <children>
+                                 <Label text="Mine opgaver">
+                                    <font>
+                                       <Font name="System Bold" size="18.0" />
+                                    </font>
+                                 </Label>
+                                 <ListView fx:id="taskListView" prefHeight="200.0" prefWidth="200.0" />
+                                 <Button minWidth="125.0" mnemonicParsing="false" onAction="#goToTask" text="Vis opgave">
+                                    <VBox.margin>
+                                       <Insets top="7.0" />
+                                    </VBox.margin>
+                                 </Button>
+                                 <Line endX="75.0" startX="-75.0">
+                                    <stroke>
+                                       <LinearGradient endX="1.0" endY="1.0">
+                                          <stops>
+                                             <Stop>
+                                                <color>
+                                                   <Color red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" />
+                                                </color>
+                                             </Stop>
+                                             <Stop offset="0.48993288590604017">
+                                                <color>
+                                                   <Color red="0.5411764979362488" green="0.658823549747467" blue="0.6823529601097107" />
+                                                </color>
+                                             </Stop>
+                                             <Stop offset="1.0">
+                                                <color>
+                                                   <Color red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" />
+                                                </color>
+                                             </Stop>
+                                          </stops>
+                                       </LinearGradient>
+                                    </stroke>
+                                    <VBox.margin>
+                                       <Insets bottom="7.0" top="14.0" />
+                                    </VBox.margin>
+                                 </Line>
+                              </children>
+                           </VBox>
+                           <VBox alignment="CENTER">
+                              <children>
+                                 <Label text="Filer">
+                                    <font>
+                                       <Font name="System Bold" size="18.0" />
+                                    </font>
+                                 </Label>
+                                 <ListView fx:id="selectedTaskFileListView" prefHeight="200.0" prefWidth="200.0" />
+                                 <Button minWidth="125.0" mnemonicParsing="false" onAction="#downloadSelectedFile" text="Hent fil">
+                                    <VBox.margin>
+                                       <Insets top="7.0" />
+                                    </VBox.margin>
+                                 </Button>
+                                 <Line endX="75.0" startX="-75.0">
+                                    <stroke>
+                                       <LinearGradient endX="1.0" endY="1.0">
+                                          <stops>
+                                             <Stop>
+                                                <color>
+                                                   <Color red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" />
+                                                </color>
+                                             </Stop>
+                                             <Stop offset="0.48993288590604017">
+                                                <color>
+                                                   <Color red="0.5411764979362488" green="0.658823549747467" blue="0.6823529601097107" />
+                                                </color>
+                                             </Stop>
+                                             <Stop offset="1.0">
+                                                <color>
+                                                   <Color red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" />
+                                                </color>
+                                             </Stop>
+                                          </stops>
+                                       </LinearGradient>
+                                    </stroke>
+                                    <VBox.margin>
+                                       <Insets bottom="7.0" top="14.0" />
+                                    </VBox.margin>
+                                 </Line>
+                              </children>
+                           </VBox>
+                           <VBox alignment="CENTER">
+                              <children>
+                                 <Label text="Videoer">
+                                    <font>
+                                       <Font name="System Bold" size="18.0" />
+                                    </font>
+                                 </Label>
+                                 <ListView fx:id="selectedTaskVideoListView" prefHeight="200.0" prefWidth="200.0" />
+                                 <Button minWidth="125.0" mnemonicParsing="false" onAction="#playSelectedVideo" text="Afspil video">
+                                    <VBox.margin>
+                                       <Insets top="7.0" />
+                                    </VBox.margin>
+                                 </Button>
+                                 <Line endX="75.0" startX="-75.0">
+                                    <stroke>
+                                       <LinearGradient endX="1.0" endY="1.0">
+                                          <stops>
+                                             <Stop>
+                                                <color>
+                                                   <Color red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" />
+                                                </color>
+                                             </Stop>
+                                             <Stop offset="0.48993288590604017">
+                                                <color>
+                                                   <Color red="0.5411764979362488" green="0.658823549747467" blue="0.6823529601097107" />
+                                                </color>
+                                             </Stop>
+                                             <Stop offset="1.0">
+                                                <color>
+                                                   <Color red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" />
+                                                </color>
+                                             </Stop>
+                                          </stops>
+                                       </LinearGradient>
+                                    </stroke>
+                                    <VBox.margin>
+                                       <Insets bottom="7.0" top="14.0" />
+                                    </VBox.margin>
+                                 </Line>
+                              </children>
+                           </VBox>
+                        </children>
+                     </VBox>
+                  </children>
+                  <padding>
+                     <Insets bottom="7.0" left="7.0" right="7.0" top="7.0" />
+                  </padding>
+               </VBox>
+            </right>
+            <left>
+               <VBox prefHeight="200.0" prefWidth="200.0" styleClass="sort-color" stylesheets="@../../../style/resono.css">
+                  <children>
+                     <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+                        <children>
+                           <ImageView fitWidth="250.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                 <Image url="@../../../media/resono.png" />
+                              </image>
+                              <VBox.margin>
+                                 <Insets />
+                              </VBox.margin>
+                              <effect>
+                                 <DropShadow />
+                              </effect>
+                           </ImageView>
+                        </children>
+                        <VBox.margin>
+                           <Insets bottom="14.0" left="7.0" right="7.0" top="14.0" />
+                        </VBox.margin>
+                     </VBox>
+                     <HBox alignment="CENTER" minHeight="50.0" prefHeight="50.0" prefWidth="200.0" styleClass="sortere-color" stylesheets="@../../../style/resono.css">
+                        <children>
+                           <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                              <HBox.margin>
+                                 <Insets right="10.0" />
+                              </HBox.margin>
+                              <image>
+                                 <Image url="@../../../media/help.png" />
+                              </image>
+                              <effect>
+                                 <DropShadow>
+                                    <color>
+                                       <Color opacity="0.20000000298023224" />
+                                    </color>
+                                 </DropShadow>
+                              </effect>
+                           </ImageView>
+                           <Button minWidth="160.0" mnemonicParsing="false" onAction="#helpDialog" prefWidth="135.0" text="Hjælp" textFill="WHITE">
+                              <effect>
+                                 <DropShadow>
+                                    <color>
+                                       <Color opacity="0.5" />
+                                    </color>
+                                 </DropShadow>
+                              </effect>
+                           </Button>
+                        </children>
+                     </HBox>
+                     <HBox alignment="CENTER" minHeight="50.0" prefHeight="50.0" prefWidth="200.0" styleClass="sortest-color" stylesheets="@../../../style/resono.css">
+                        <children>
+                           <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                              <HBox.margin>
+                                 <Insets right="10.0" />
+                              </HBox.margin>
+                              <image>
+                                 <Image url="@../../../media/password.png" />
+                              </image>
+                              <effect>
+                                 <DropShadow>
+                                    <color>
+                                       <Color opacity="0.20000000298023224" />
+                                    </color>
+                                 </DropShadow>
+                              </effect>
+                           </ImageView>
+                           <Button minWidth="160.0" mnemonicParsing="false" prefWidth="135.0" text="GDPR - opbevaring af data" textFill="WHITE">
+                              <effect>
+                                 <DropShadow>
+                                    <color>
+                                       <Color opacity="0.5" />
+                                    </color>
+                                 </DropShadow>
+                              </effect>
+                           </Button>
+                        </children>
+                     </HBox>
+                     <HBox alignment="CENTER" minHeight="50.0" prefHeight="50.0" prefWidth="200.0" styleClass="sortere-color" stylesheets="@../../../style/resono.css">
+                        <children>
+                           <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                              <HBox.margin>
+                                 <Insets right="10.0" />
+                              </HBox.margin>
+                              <image>
+                                 <Image url="@../../../media/contact.png" />
+                              </image>
+                              <effect>
+                                 <DropShadow>
+                                    <color>
+                                       <Color opacity="0.20000000298023224" />
+                                    </color>
+                                 </DropShadow>
+                              </effect>
+                           </ImageView>
+                           <Button minWidth="160.0" mnemonicParsing="false" prefWidth="135.0" text="Kontakt Resonō" textFill="WHITE">
+                              <effect>
+                                 <DropShadow>
+                                    <color>
+                                       <Color opacity="0.5" />
+                                    </color>
+                                 </DropShadow>
+                              </effect>
+                           </Button>
+                        </children>
+                     </HBox>
+                     <HBox alignment="CENTER" minHeight="50.0" prefHeight="50.0" prefWidth="200.0" styleClass="sortest-color" stylesheets="@../../../style/resono.css">
+                        <children>
+                           <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                              <HBox.margin>
+                                 <Insets right="10.0" />
+                              </HBox.margin>
+                              <image>
+                                 <Image url="@../../../media/aboutus.png" />
+                              </image>
+                              <effect>
+                                 <DropShadow>
+                                    <color>
+                                       <Color opacity="0.20000000298023224" />
+                                    </color>
+                                 </DropShadow>
+                              </effect>
+                           </ImageView>
+                           <Button minWidth="160.0" mnemonicParsing="false" prefWidth="135.0" text="Om Resonō" textFill="WHITE">
+                              <effect>
+                                 <DropShadow>
+                                    <color>
+                                       <Color opacity="0.5" />
+                                    </color>
+                                 </DropShadow>
+                              </effect>
+                           </Button>
+                        </children>
+                     </HBox>
+                     <VBox alignment="BOTTOM_CENTER" minHeight="50.0" prefHeight="900.0" prefWidth="200.0" stylesheets="@../../../style/resono.css">
+                        <children>
+                           <Button mnemonicParsing="false" onAction="#logOut" prefWidth="100.0" text="Log ud">
+                              <effect>
+                                 <DropShadow>
+                                    <color>
+                                       <Color opacity="0.49618321657180786" />
+                                    </color>
+                                 </DropShadow>
+                              </effect>
+                              <VBox.margin>
+                                 <Insets left="5.0" right="5.0" top="5.0" />
+                              </VBox.margin>
+                           </Button>
+                        </children>
+                        <padding>
+                           <Insets bottom="7.0" />
+                        </padding>
+                     </VBox>
+                  </children>
+               </VBox>
+            </left>
+         </BorderPane>
+      </content>
+   </Tab>
+</TabPane>
