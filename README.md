@@ -1,3 +1,3 @@
-# Exam project, 1st semester, Datamatikeruddannelsen
+# Midtvejsprojekt
 
-All files related to the project.
+All files related to the exam project of the 1st semester (Datamatiker)
